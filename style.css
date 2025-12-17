@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: "Comic Sans MS", "Segoe UI", sans-serif;
@@ -6,6 +7,7 @@ body {
   text-align: center;
 }
 
+/* Header */
 .header {
   background: #ffd6e8;
   padding: 20px;
@@ -32,6 +34,7 @@ nav a:hover {
   color: #ff5fa2;
 }
 
+/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -50,6 +53,7 @@ nav a:hover {
   transform: scale(1.05) rotate(1deg);
 }
 
+/* Content */
 .content {
   padding: 40px;
   font-size: 1.1rem;
@@ -60,6 +64,7 @@ nav a:hover {
   font-weight: bold;
 }
 
+/* Footer */
 footer {
   background: #ffe6f2;
   padding: 15px;
