@@ -1,73 +1,121 @@
-/* General Styles */
+/* =========================
+   GLOBAL STYLES
+========================= */
 body {
   margin: 0;
-  font-family: "Comic Sans MS", "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #fff0f6, #f0f9ff);
-  color: #444;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
   text-align: center;
+  color: #444;
+  overflow-x: hidden;
 }
 
-/* Header */
-.header {
-  background: #ffd6e8;
-  padding: 20px;
-  border-bottom: 4px dashed #ff9acb;
+header {
+  padding: 25px 10px;
 }
 
-.header h1 {
-  margin: 0;
-  color: #c94f7c;
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
 }
 
-nav {
-  margin-top: 10px;
+p {
+  margin-top: 0;
+  opacity: 0.8;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #7a3b5e;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ff5fa2;
-}
-
-/* Gallery */
+/* =========================
+   GALLERY PAGE STYLES
+========================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
   padding: 30px;
+}
+
+.gallery a {
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  padding: 15px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  border-radius: 14px;
 }
 
-.gallery img:hover {
-  transform: scale(1.05) rotate(1deg);
+/* Hover sparkle glow */
+.gallery a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.9);
 }
 
-/* Content */
-.content {
-  padding: 40px;
-  font-size: 1.1rem;
-}
-
-.email {
-  color: #ff5fa2;
+/* Image label */
+.gallery span {
+  display: block;
+  margin-top: 10px;
   font-weight: bold;
 }
 
-/* Footer */
-footer {
-  background: #ffe6f2;
-  padding: 15px;
-  margin-top: 20px;
-  font-size: 0.9rem;
+/* =========================
+   IMAGE DETAIL PAGE
+========================= */
+.image-page {
+  padding: 30px;
+}
+
+.image-page img {
+  width: 80%;
+  max-width: 750px;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #ffb6c1;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #ff8fab;
+  transform: scale(1.05);
+}
+
+/* =========================
+   SPARKLE EFFECT (JS)
+========================= */
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: pink;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleFade 0.6s forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
 }
